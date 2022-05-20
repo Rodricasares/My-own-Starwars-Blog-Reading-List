@@ -1,0 +1,15 @@
+.home{
+    overflow-x: hidden;
+    background-image: url(https://cdn.mos.cms.futurecdn.net/qLEUrao7WGAPGfWzkN2QZS.jpg);
+}
+
+h1{
+    margin-left: 20px;
+}
+
+.planets{
+    overflow-x:scroll;
+}
+.characters{
+    overflow-x:scroll;
+}

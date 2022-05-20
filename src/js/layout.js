@@ -2,11 +2,14 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
-import injectContext from "./store/appContext";
 
+
+import injectContext from "./store/appContext";
+import Card from "./component/card";
+import Info from "./views/info";
+import InfoPeople from "./views/info_people.js";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
@@ -23,10 +26,19 @@ const Layout = () => {
 					<Navbar />
 					<Switch>
 						<Route exact path="/">
-							<Home />
+							<Card />
 						</Route>
 						<Route exact path="/demo">
 							<Demo />
+						</Route>
+						<Route exact path="/card/">
+							<Card />
+						</Route>
+							<Route exact path="/info/:id">
+							<Info />
+						</Route>
+						<Route exact path="/info_people/:id">
+							<InfoPeople />
 						</Route>
 						<Route exact path="/single/:theid">
 							<Single />
