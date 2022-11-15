@@ -1,13 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+
 .home{
     overflow-x: hidden;
-    background-image: url(https://cdn.mos.cms.futurecdn.net/qLEUrao7WGAPGfWzkN2QZS.jpg);
+    background-image: url(https://cdn.pocket-lint.com/r/s/1200x/assets/images/147767-tv-feature-what-order-should-you-watch-all-the-star-wars-films-image1-1wdfjceytb.jpg);
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+.info{
+    overflow-x: hidden;
+    background-image: url(https://images.alphacoders.com/107/107763.jpg);
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+
+}
+
+.infoPeople{
+    overflow-x: hidden;
+    background-image: url(https://i.pinimg.com/originals/ff/fa/68/fffa68bd9a098414cb185a7df0b7938d.jpg);
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+
 }
 
 h1{
     margin-left: 20px;
 }
-
+.card{
+    background-color: rgba(19, 16, 16, 0.877);
+width: 16rem;
+height: auto;
+}
 .planets{
+
     overflow-x:scroll;
 }
 .characters{

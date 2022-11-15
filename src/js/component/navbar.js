@@ -20,7 +20,7 @@ export const Navbar = () => {
         </span>
       </Link>
       <div className="ml-auto mx-5">
-        <div className="btn-group dropstart mx-5">
+        <div className="btn-group dropstart float-end">
           <button
             type="button"
             className="btn btn-outline-warning dropdown-toggle"

@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
+import "../../styles/home.css"
+
 
 const InfoPeople = () => {
   const params = useParams();
@@ -22,35 +24,49 @@ const InfoPeople = () => {
   }, []);
 
   return (
-    <div className="container mt-5">
-      <div className="card mb-3 shadow p-3 mb-5 bg-body rounded">
-        <div className="row g-0 border border-warning">
-          <div className="col-md-4">
-          {data ? (
-              <img src={img} className="" alt="Bootstrap" width="350" height="auto" />
+<div className="jumbotron jumbotron-fluid infoPeople">
+      <div className="container">
+      <h1 className="display-3 text-warning">{data ? data.properties.name : ".."}</h1>
+
+      {data ? (
+ <img
+ src={img}
+ className="rounded mx-auto d-block mb-4 rounded-2"
+ alt="Bootstrap"
+ width="230"
+ height="auto"
+/>
             ) : (
               ".."
             )}
-          </div>
-          <div className="col-md-8">
-            <div className="card-body ">
-              <h5 className="card-title">{data ? data.properties.name : ".."}</h5>
-        
-        <p>Name: {data ? data.properties.name : ".."}</p>
-        <p>Height: {data ? data.properties.height : ".."}</p>
-        <p>Mass: {data ? data.properties.mass : ".."}</p>
-        <p>Birth year: {data ? data.properties.birth_year : ".."}</p>
-        <p>Gender: {data ? data.properties.gender : ".."}</p>
-        
-        
-        <p className="card-text">
-                <small className="text-muted"></small>
-              </p>
-            </div>
-          </div>
-        </div>
+<div className="container ">
+<ul className="list-group ">
+  <li className="list-group-item d-flex justify-content-between align-items-center bg-transparent text-white border-0">
+  <h3>Name </h3>
+    <span className="badge bg-warning rounded-pill">{data ? data.properties.name : ".."}</span>
+  </li>
+  <li className="list-group-item d-flex justify-content-between align-items-center bg-transparent text-white border-0">
+  <h3 className="me-2">Height</h3>
+    <span className="badge bg-warning rounded-pill">{data ? data.properties.height : ".."}
+</span>
+  </li>
+  <li className="list-group-item d-flex justify-content-between align-items-center bg-transparent text-white border-0">
+  <h3>Mass</h3><span className="badge bg-warning rounded-pill">{data ? data.properties.mass : ".."}
+</span>
+  </li>
+  <li className="list-group-item d-flex justify-content-between align-items-center bg-transparent text-white border-0">
+  <h3 className="me-2">Birth year</h3><span className="badge bg-warning rounded-pill">{data ? data.properties.birth_year : ".."}
+</span>
+  </li>
+  <li className="list-group-item d-flex justify-content-between align-items-center bg-transparent text-white border-0">
+  <h3 className="me-2">Gender</h3><span className="badge bg-warning rounded-pill">{data ? data.properties.gender : ".."}
+</span>
+  </li>
+</ul>
+</div>
       </div>
-    </div>
+    </div>   
+    
   );
 };
 

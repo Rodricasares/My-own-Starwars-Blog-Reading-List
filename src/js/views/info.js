@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
+import "../../styles/home.css"
 
 const Info = () => {
   const params = useParams();
@@ -22,33 +23,42 @@ const Info = () => {
   }, []);
 
   return (
-    <div className="container mt-5">
-      <div class="card mb-3 shadow p-3 mb-5 bg-body rounded">
-        <div class="row g-0 border border-warning">
-          <div class="col-md-4">
-            {data ? (
-              <img src={img} className="" alt="Bootstrap" width="350" height="auto" />
-            ) : (
-              ".."
-            )}
-          </div>
-          <div class="col-md-8">
-            <div class="card-body ">
-              <h5 class="card-title">{data ? data.properties.name : ".."}</h5>
-              <p>Climate: {data ? data.properties.climate : ".."}</p>
-              <p>Diameter: {data ? data.properties.diameter : ".."}</p>
-              <p>Gravity: {data ? data.properties.gravity : ".."}</p>
-              <p>Terrain: {data ? data.properties.terrain : ".."}</p>
-              <p>Population: {data ? data.properties.population : ".."}</p>
-              <p>Orbital period: {data ? data.properties.orbital_period : ".."}</p>
-              <p>Rotation period: {data ? data.properties.rotation_period : ".."}</p>
-              
-              <p class="card-text">
-                <small class="text-muted"></small>
-              </p>
-            </div>
-          </div>
-        </div>
+    <div className="jumbotron jumbotron-fluid info">
+      <div className="container">
+      <h1 className="display-3 text-warning">{data ? data.properties.name : ".."}</h1>
+
+        {data ? (
+          <img
+            src={img}
+            className="rounded mx-auto d-block mb-4 rounded-circle"
+            alt="Bootstrap"
+            width="230"
+            height="auto"
+          />
+        ) : (
+          "..."
+        )}
+<div className="container">
+<ul className="list-group ">
+  <li className="list-group-item d-flex justify-content-between align-items-center bg-transparent text-white">
+  <h3>Climate </h3>
+    <span className="badge bg-warning rounded-pill">{data ? data.properties.climate : ".."}</span>
+  </li>
+  <li className="list-group-item d-flex justify-content-between align-items-center bg-transparent text-white">
+  <h3 className="me-2">Gravity</h3>
+    <span className="badge bg-warning rounded-pill">{data ? data.properties.gravity : ".."}
+</span>
+  </li>
+  <li className="list-group-item d-flex justify-content-between align-items-center bg-transparent text-white">
+  <h3>Population</h3><span className="badge bg-warning rounded-pill">{data ? data.properties.population : ".."}
+</span>
+  </li>
+  <li className="list-group-item d-flex justify-content-between align-items-center bg-transparent text-white">
+  <h3 className="me-2">Terrain</h3><span className="badge bg-warning rounded-pill">{data ? data.properties.terrain : ".."}
+</span>
+  </li>
+</ul>
+</div>
       </div>
     </div>
   );
